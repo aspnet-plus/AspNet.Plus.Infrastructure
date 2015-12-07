@@ -1,2 +1,2 @@
-# AspNet.Infrastructure.ExceptionHandler
-A framework for intercepting unhandled exception globally, across all Middlewares.
+# AspNet.Infrastructure
+A set of Nuget packages to help ASP.NET 5 developers build quality infrastructure related code.
