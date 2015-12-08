@@ -2,6 +2,7 @@ using AspNet.Plus.Infrastructure.Builder;
 using ExceptionMangerSample.RealisticSamples;
 using ExceptionMangerSample.RealisticSamples.ExceptionLoggers;
 using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ExceptionMangerSample
@@ -39,5 +40,8 @@ namespace ExceptionMangerSample
 
             app.UseMvc();
         }
+
+        // Entry point for the application.
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
