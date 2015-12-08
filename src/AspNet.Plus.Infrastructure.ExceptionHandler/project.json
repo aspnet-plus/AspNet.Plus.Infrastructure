@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0-*",
+  "description": "AspNet.Plus.Infrastructure.ExceptionHandler.",
+  "tags": [ "" ],
+  "compilationOptions": {
+    "warningsAsErrors": true,
+    "keyFile": "../../key.snk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
+  },
+  "dependencies": {
+    "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics.Abstractions": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Http.Features": "1.0.0-rc1-final"
+  },
+  "frameworks": {
+    "net451": { },
+    "dotnet5.4": {
+      "dependencies": {
+      }
+    }
+  }
+}
