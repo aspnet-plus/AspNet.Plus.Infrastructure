@@ -1,0 +1,11 @@
+{
+  "webroot": "wwwroot",
+  "dependencies": {
+    "AspNet.Plus.Infrastructure.ExceptionHandler": "1.0.0-*",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
+  },  
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": { }
+  }
+}

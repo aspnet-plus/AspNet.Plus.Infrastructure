@@ -13,8 +13,8 @@ using Microsoft.AspNet.Http.Features;
 namespace AspNet.Plus.Infrastructure.ExceptionHandler
 {
     /// <summary>
-    /// The HTTP Exception Intercept Manager that delegates an unhandled exception to
-    /// defined ExceptionInterceptHandlers in sequence, if any.
+    /// The HTTP Exception Manager traps all unhandled exception and 
+    /// delegates in context, the exception for each ExceptiontHandler in sequence, if any.
     /// </summary>
     public class ExceptionManager
     {
@@ -68,7 +68,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionHandler
         }
 
         /// <summary>
-        /// Adds the exception intercept.
+        /// Adds and exception handler.
         /// </summary>
         /// <param name="exceptionHandler">The exception handler.</param>
         public void AddExceptionHandler(IExceptionHandler exceptionHandler)
