@@ -1,13 +1,13 @@
-﻿using AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces;
+﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace ExceptionMangerSample.RealisticSamples
 {
-    public class ExceptionFinalizer : IExceptionHandler
+    public class ExceptionFinalizer : IExceptionInterceptHandler
     {
-        public async Task HandleAsync(IExceptionContext exceptionContext)
+        public async Task HandleAsync(IExceptionInterceptContext exceptionContext)
         {
             var category = (ExceptionCategory)exceptionContext.Context.Items["exception.category"];
             dynamic response = exceptionContext.Context.Items["exception.response"];

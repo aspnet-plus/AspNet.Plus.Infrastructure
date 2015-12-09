@@ -12,7 +12,7 @@ namespace ExceptionMangerSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddExceptionManager();
+            services.AddExceptionInterceptManager();
 
             // required if adding exception intercept handlers using IoC
             //services.AddSingleton<ExceptionCategorizer>();
@@ -26,17 +26,17 @@ namespace ExceptionMangerSample
         { 
             // *** samples 
             // the order of addition determines the sequence of how each Exception Intercept Handler gets called.
-            app.UseExceptionManager();
-            app.AddExceptionHandler(new ExceptionInitializer(new ExceptionCategorizer()));
-            app.AddExceptionHandler(new ExceptionJIRALogger());
-            app.AddExceptionHandler(new ExceptionDbLogger());
-            app.AddExceptionHandler(new ExceptionFinalizer());
+            app.UseExceptionInterceptManager();
+            app.AddExceptionInterceptHandler(new ExceptionInitializer(new ExceptionCategorizer()));
+            app.AddExceptionInterceptHandler(new ExceptionJIRALogger());
+            app.AddExceptionInterceptHandler(new ExceptionDbLogger());
+            app.AddExceptionInterceptHandler(new ExceptionFinalizer());
 
             // OR if intercepts are defined in the IoC
-            //app.AddExceptionHandler<ExceptionInitializer>();
-            //app.AddExceptionHandler<ExceptionDbLogger>();
-            //app.AddExceptionHandler<ExceptionJIRALogger>();
-            //app.AddExceptionHandler(typeof(ExceptionFinalizer));
+            //app.AddExceptionInterceptHandler<ExceptionInitializer>();
+            //app.AddExceptionInterceptHandler<ExceptionDbLogger>();
+            //app.AddExceptionInterceptHandler<ExceptionJIRALogger>();
+            //app.AddExceptionInterceptHandler(typeof(ExceptionFinalizer));
 
             app.UseMvc();
         }

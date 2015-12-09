@@ -5,26 +5,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces;
+using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Features;
 
-namespace AspNet.Plus.Infrastructure.ExceptionHandler
+namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
 {
     /// <summary>
-    /// The HTTP Exception Manager traps all unhandled exception and 
-    /// delegates in context, the exception for each ExceptiontHandler in sequence, if any.
+    /// The Exception Intercept Manager traps all unhandled exception and 
+    /// delegates in context, the exception each ExceptiontInterceptHandler in sequence, if any.
     /// </summary>
-    public class ExceptionManager
+    public class ExceptionInterceptManager
     {
-        private readonly IList<IExceptionHandler> _exceptionHandlers;
+        private readonly IList<IExceptionInterceptHandler> _exceptionInterceptHandlers;
 
         /// <summary>
         /// </summary>
-        public ExceptionManager()
+        public ExceptionInterceptManager()
         {
-            _exceptionHandlers = new List<IExceptionHandler>();
+            _exceptionInterceptHandlers = new List<IExceptionInterceptHandler>();
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionHandler
 
             try
             {
-                foreach (var handler in _exceptionHandlers)
+                foreach (var handler in _exceptionInterceptHandlers)
                 {
                     try
                     {
@@ -68,12 +68,12 @@ namespace AspNet.Plus.Infrastructure.ExceptionHandler
         }
 
         /// <summary>
-        /// Adds and exception handler.
+        /// Adds and exception intercept handler.
         /// </summary>
-        /// <param name="exceptionHandler">The exception handler.</param>
-        public void AddExceptionHandler(IExceptionHandler exceptionHandler)
+        /// <param name="exceptionInterceptHandler">The exception intercept handler.</param>
+        public void AddExceptionInterceptHandler(IExceptionInterceptHandler exceptionInterceptHandler)
         {
-            _exceptionHandlers.Add(exceptionHandler);
+            _exceptionInterceptHandlers.Add(exceptionInterceptHandler);
         }
     }
 }

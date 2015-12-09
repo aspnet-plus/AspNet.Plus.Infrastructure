@@ -4,9 +4,9 @@
 using System;
 using Microsoft.AspNet.Http;
 
-namespace AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces
+namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces
 {
-    public interface IExceptionContext
+    public interface IExceptionInterceptContext
     {
         /// <summary>
         /// Gets the context.

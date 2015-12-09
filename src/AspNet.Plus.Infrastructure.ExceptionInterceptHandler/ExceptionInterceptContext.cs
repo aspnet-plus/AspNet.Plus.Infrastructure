@@ -3,16 +3,16 @@
 
 using System;
 using Microsoft.AspNet.Http;
-using AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces;
+using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 
-namespace AspNet.Plus.Infrastructure.ExceptionHandler
+namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
 {
     /// <summary>
     /// The exception context that holds the HttpContext and the actual
     /// unhandled exception that occurred in
     /// </summary>
-    /// <seealso cref="AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces.IExceptionContext" />
-    public class ExceptionContext : IExceptionContext
+    /// <seealso cref="AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces.IExceptionInterceptContext" />    
+    public class ExceptionContext : IExceptionInterceptContext
     {
         /// <summary>
         /// Gets the context.

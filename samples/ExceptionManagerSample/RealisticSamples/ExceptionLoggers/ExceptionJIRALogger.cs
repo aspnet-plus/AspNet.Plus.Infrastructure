@@ -1,11 +1,11 @@
-﻿using AspNet.Plus.Infrastructure.ExceptionHandler.Interfaces;
+﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using System.Threading.Tasks;
 
 namespace ExceptionMangerSample.RealisticSamples.ExceptionLoggers
 {
-    public class ExceptionJIRALogger : IExceptionHandler
+    public class ExceptionJIRALogger : IExceptionInterceptHandler
     {
-        public Task HandleAsync(IExceptionContext exceptionContext)
+        public Task HandleAsync(IExceptionInterceptContext exceptionContext)
         {
             var category = (ExceptionCategory)exceptionContext.Context.Items["exception.category"];
             if (category.Category == ExceptionCategoryType.Unhandled)
