@@ -1,9 +1,13 @@
 {
   "webroot": "wwwroot",
+  "compilationOptions": {
+    "warningsAsErrors": true    
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
   },
+
   "dependencies": {
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
