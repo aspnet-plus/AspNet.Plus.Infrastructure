@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
-namespace ExceptionMangerSample.Controllers
+namespace ExceptionInterceptSample.Controllers
 {
     [Route("api/[controller]")]
     public class SampleController : Controller

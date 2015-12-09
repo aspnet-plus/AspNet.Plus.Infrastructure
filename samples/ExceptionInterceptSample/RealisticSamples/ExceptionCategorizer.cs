@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace ExceptionMangerSample.RealisticSamples
+namespace ExceptionInterceptSample.RealisticSamples
 {
     public enum ExceptionCategoryType
     {

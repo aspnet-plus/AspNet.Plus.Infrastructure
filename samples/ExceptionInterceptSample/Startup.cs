@@ -1,11 +1,11 @@
 using AspNet.Plus.Infrastructure.Builder;
-using ExceptionMangerSample.RealisticSamples;
-using ExceptionMangerSample.RealisticSamples.ExceptionLoggers;
+using ExceptionInterceptSample.RealisticSamples;
+using ExceptionInterceptSample.RealisticSamples.ExceptionLoggers;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ExceptionMangerSample
+namespace ExceptionInterceptSample
 {
     public class Startup
     {

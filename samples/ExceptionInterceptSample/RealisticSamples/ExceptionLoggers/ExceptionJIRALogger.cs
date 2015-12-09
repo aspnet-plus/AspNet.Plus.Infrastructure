@@ -1,7 +1,7 @@
 ﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using System.Threading.Tasks;
 
-namespace ExceptionMangerSample.RealisticSamples.ExceptionLoggers
+namespace ExceptionInterceptSample.RealisticSamples.ExceptionLoggers
 {
     public class ExceptionJIRALogger : IExceptionInterceptHandler
     {

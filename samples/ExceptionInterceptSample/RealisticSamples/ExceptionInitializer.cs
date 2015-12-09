@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Threading.Tasks;
 
-namespace ExceptionMangerSample.RealisticSamples
+namespace ExceptionInterceptSample.RealisticSamples
 {
     public class ExceptionInitializer : IExceptionInterceptHandler
     {
