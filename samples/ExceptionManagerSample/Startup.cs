@@ -22,7 +22,7 @@ namespace ExceptionMangerSample
             //services.AddSingleton(typeof(ExceptionJIRALogger));
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app)  
         { 
             // *** samples 
             // the order of addition determines the sequence of how each Exception Intercept Handler gets called.
