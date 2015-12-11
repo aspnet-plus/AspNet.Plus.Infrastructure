@@ -13,8 +13,7 @@ before_build:
  - ps: dnvm use 1.0.0-rc1-final
  - ps: npm cache clean
  - ps: dnu restore
- - ps: FOR /R .\test %%I IN (projec?.json) DO (pushd "%%~dpI" && dnx . test && popd)
-
+ 
 build:
   verbosity: detailed
 artifacts:
