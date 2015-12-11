@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Http.Features;
 
 namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
 {
@@ -36,8 +35,8 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
         /// <exception cref="System.AggregateException"></exception>
         public async Task InterceptExceptionAsync(HttpContext context)
         {
-            var feature = context.Features.Get<IExceptionHandlerFeature>();
-            var exceptionContext = new ExceptionContext() { Context = context, Exception = feature?.Error };
+            var feature = (IExceptionHandlerFeature)context.Features[typeof(IExceptionHandlerFeature)];
+            var exceptionContext = new ExceptionInterceptContext() { Context = context, Exception = feature?.Error };
             var handlerExecutionExceptions = new List<Exception>();
 
             try

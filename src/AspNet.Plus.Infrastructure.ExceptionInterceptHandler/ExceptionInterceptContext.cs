@@ -12,7 +12,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
     /// unhandled exception that occurred in
     /// </summary>
     /// <seealso cref="AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces.IExceptionInterceptContext" />    
-    public class ExceptionContext : IExceptionInterceptContext
+    public class ExceptionInterceptContext : IExceptionInterceptContext
     {
         /// <summary>
         /// Gets the context.

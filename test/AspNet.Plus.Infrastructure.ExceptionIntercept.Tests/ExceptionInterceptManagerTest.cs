@@ -1,49 +1,104 @@
-﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
+﻿using System;
+using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Http.Features;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using NSubstitute;
 using Xunit;
 
 namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class Class1
+    public class ExceptionInterceptManagerTest
     {
-        //private IMock<HttpContext> PrepareHttpContextMock()
-        //{
-        //    var httpContext = new Mock<HttpContext>();
+        #region Helpers
+        public interface IDependencies
+        {
+            HttpContext HttpContext { get; }
+            IExceptionHandlerFeature ExceptionFeature { get; }
+        }
+        
+        private IDependencies CreateDependencies()
+        {
+            var dependencies = Substitute.For<IDependencies>();
+            dependencies.HttpContext.Features[Arg.Is<Type>(typeof(IExceptionHandlerFeature))].Returns(dependencies.ExceptionFeature);
+                        
+            return dependencies;
+        }
+        #endregion Helpers
 
-        //    httpContext.Setup(x => x.Features).Returns(new Mock<IFeatureCollection>().Object);
+        #region InterceptExceptionAsync
+        [Fact]
+        public async void InterceptExceptionAsync_AddingInterceptHandlers_HandlersWereInvokedAndInSequence()
+        {
+            // arrange            
+            var dependencies = CreateDependencies();
+            var unit = new ExceptionInterceptManager();
+            var handler1 = Substitute.For<IExceptionInterceptHandler>();
+            var handler2 = Substitute.For<IExceptionInterceptHandler>();
+            var handler3 = Substitute.For<IExceptionInterceptHandler>();
 
-        //    return httpContext;
-        //}
+            var counter = 1;
+            var atHandler1Call = -1;
+            var atHandler2Call = -1;
+            var atHandler3Call = -1;
+
+            handler1.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => atHandler1Call = counter++);
+            handler2.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => atHandler2Call = counter++);
+            handler3.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => atHandler3Call = counter++);
+            
+            // add the handlers
+            unit.AddExceptionInterceptHandler(handler1);
+            unit.AddExceptionInterceptHandler(handler2);
+            unit.AddExceptionInterceptHandler(handler3);
+
+            // act
+            await unit.InterceptExceptionAsync(dependencies.HttpContext);
+
+            // assert invokes
+            await handler1.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
+            await handler2.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
+            await handler3.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
+
+            // assert sequence
+            Assert.Equal(atHandler1Call, 1);
+            Assert.Equal(atHandler2Call, 2);
+            Assert.Equal(atHandler3Call, 3);
+        }
 
         [Fact]
-        public void InterceptExceptionAsync_AddingIntercetHandlers_HandlersWereInvokedInSequence()
+        public async void InterceptExceptionAsync_InterceptHandlersThrowingExceptions_AggregateExceptionAndInnerExceptions()
         {
-            //    // arrange            
-            //    var unit = new ExceptionInterceptManager();
-            //    var handler1 = new Mock<IExceptionInterceptHandler>();
-            //    var handler2 = new Mock<IExceptionInterceptHandler>();
-            //    var handler3 = new Mock<IExceptionInterceptHandler>();
-            //    var httpContext = new Mock<HttpContext>();
+            // arrange            
+            var dependencies = CreateDependencies();
+            var unit = new ExceptionInterceptManager();
+            var handler1 = Substitute.For<IExceptionInterceptHandler>();
+            var handler2 = Substitute.For<IExceptionInterceptHandler>();
+            var handler3 = Substitute.For<IExceptionInterceptHandler>();
+            
+            handler1.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception1"); });
+            handler2.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception2"); });
+            handler3.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception3"); });
 
+            // add the handlers
+            unit.AddExceptionInterceptHandler(handler1);
+            unit.AddExceptionInterceptHandler(handler2);
+            unit.AddExceptionInterceptHandler(handler3);
 
+            // act
+            var aggException = await Assert.ThrowsAnyAsync<AggregateException>(async () =>
+            {
+                await unit.InterceptExceptionAsync(dependencies.HttpContext);
+            });
 
-            //    //var xx = httpContext.Object.Features;
+            // assert invokes
+            await handler1.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
+            await handler2.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
+            await handler3.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
 
-
-
-            //    // var xxx = new Mock<IExceptionInterceptContext>();
-            //    // new Mock<IExceptionHandlerFeature>();
-
-
+            Assert.Equal(aggException.InnerExceptions[0].Message, "Exception1");
+            Assert.Equal(aggException.InnerExceptions[1].Message, "Exception2");
+            Assert.Equal(aggException.InnerExceptions[2].Message, "Exception3");
         }
+        #endregion InterceptExceptionAsync
     }
 }
