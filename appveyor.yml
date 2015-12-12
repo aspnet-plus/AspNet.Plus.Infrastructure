@@ -18,3 +18,5 @@ build:
   verbosity: detailed
 artifacts:
 - path: artifacts/packages/*.nupkg
+test:off
+
