@@ -75,9 +75,9 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
             var handler2 = Substitute.For<IExceptionInterceptHandler>();
             var handler3 = Substitute.For<IExceptionInterceptHandler>();
             
-            handler1.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception1"); });
-            handler2.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception2"); });
-            handler3.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => { throw new Exception("Exception3"); });
+            handler1.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception1"));
+            handler2.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception2"));
+            handler3.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception3"));
 
             // add the handlers
             unit.AddExceptionInterceptHandler(handler1);
