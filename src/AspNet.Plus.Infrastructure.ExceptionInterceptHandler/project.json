@@ -11,11 +11,11 @@
     "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
   },
   "dependencies": {
-    "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Diagnostics.Abstractions": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Http.Features": "1.0.0-rc1-final"
+    "Microsoft.AspNet.Authentication": "1.0.0-*",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNet.Diagnostics.Abstractions": "1.0.0-*",
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-*",
+    "Microsoft.AspNet.Http.Features": "1.0.0-*"
   },
   "frameworks": {
     "net451": { },

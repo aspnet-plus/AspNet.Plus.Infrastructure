@@ -4,7 +4,8 @@
   },
 
   "dependencies": {
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.0-*",        
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.0-*",    
+    "Microsoft.AspNet.TestHost": "1.0.0-*",
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "NSubstitute": "1.9.2"
