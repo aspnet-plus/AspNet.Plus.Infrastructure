@@ -1,0 +1,20 @@
+version: 1.0.{build}
+os: Visual Studio 2015
+nuget:
+  account_feed: true
+install:
+ - cmd: nuget sources add -Name api.nuget.org -Source https://api.nuget.org/v3/index.json
+before_build:
+ - ps: dnvm update-self
+ - ps: dnvm upgrade
+ - ps: dnvm install 1.0.0-rc1-final
+ - ps: dnvm list
+ - ps: dnvm use 1.0.0-rc1-final
+ - ps: npm cache clean
+ - ps: dnu restore
+build:
+  verbosity: detailed
+artifacts:
+- path: artifacts/packages/*.nupkg
+test: off
+
