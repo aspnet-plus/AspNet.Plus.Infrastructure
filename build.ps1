@@ -110,9 +110,9 @@ Get-ChildItem -Path .\test -Filter *.xproj -Recurse | ForEach-Object -Begin { $T
 Invoke-Tests
 
 # Switch to Core CLR
-dnvm use $dnxVersion -r CoreCLR
+#dnvm use $dnxVersion -r CoreCLR
 
 # Test under Core CLR
-Invoke-Tests
+#Invoke-Tests
 
 Pop-Location
