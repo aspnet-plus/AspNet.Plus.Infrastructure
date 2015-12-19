@@ -6,6 +6,13 @@ using Microsoft.AspNet.Http;
 using NSubstitute;
 using Xunit;
 
+
+//    "xunit": "2.1.0",
+//    "xunit.runner.dnx": "2.1.0-rc1-build204",
+
+//"test": "xunit.runner.dnx",
+
+
 namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
 {
     public class ExceptionInterceptManagerTest
