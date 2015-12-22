@@ -1,6 +1,6 @@
 {
   "version": "1.0.0-*",
-  "description": "AspNet.Plus.Infrastructure.ExceptionHandler.",
+  "description": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler.",
   "tags": [ "" ],
   "compilationOptions": {
     "warningsAsErrors": true,
