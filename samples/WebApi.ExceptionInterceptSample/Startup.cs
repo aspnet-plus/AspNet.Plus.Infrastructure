@@ -1,11 +1,11 @@
 using AspNet.Plus.Infrastructure.Builder;
-using ExceptionInterceptSample.RealisticSamples;
-using ExceptionInterceptSample.RealisticSamples.ExceptionLoggers;
+using WebApi.ExceptionInterceptSample.ExceptionIntercepts;
+using WebApi.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ExceptionInterceptSample
+namespace WebApi.ExceptionInterceptSample
 {
     public class Startup
     {

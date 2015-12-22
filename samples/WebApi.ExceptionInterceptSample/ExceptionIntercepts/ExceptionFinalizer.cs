@@ -3,7 +3,7 @@ using Microsoft.AspNet.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 
-namespace ExceptionInterceptSample.RealisticSamples
+namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
 {
     public class ExceptionFinalizer : IExceptionInterceptHandler
     {

@@ -1,10 +1,9 @@
 ﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Dynamic;
 using System.Threading.Tasks;
 
-namespace ExceptionInterceptSample.RealisticSamples
+namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
 {
     public class ExceptionInitializer : IExceptionInterceptHandler
     {

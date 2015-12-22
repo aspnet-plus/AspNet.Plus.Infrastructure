@@ -1,9 +1,9 @@
 ﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using System.Threading.Tasks;
 
-namespace ExceptionInterceptSample.RealisticSamples.ExceptionLoggers
+namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers
 {
-    public class ExceptionDbLogger : IExceptionInterceptHandler
+    public class ExceptionJIRALogger : IExceptionInterceptHandler
     {
         public Task HandleAsync(IExceptionInterceptContext exceptionContext)
         {
@@ -12,8 +12,7 @@ namespace ExceptionInterceptSample.RealisticSamples.ExceptionLoggers
             {
                 dynamic response = exceptionContext.Context.Items["exception.response"];
 
-                // log whatever to the Database
-                // Note: Application Insights may be a more attractive analytical logger than rolling your own.
+                // log whatever to the JIRA for production issue tracking
             }
 
             return Task.FromResult(0);

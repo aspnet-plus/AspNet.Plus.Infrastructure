@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. samples", "03. samples"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionInterceptHandler", "src\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\AspNet.Plus.Infrastructure.ExceptionInterceptHandler.xproj", "{E1B8B885-436F-480D-851A-C466E07DD6C8}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ExceptionInterceptSample", "samples\ExceptionInterceptSample\ExceptionInterceptSample.xproj", "{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.ExceptionInterceptSample", "samples\WebApi.ExceptionInterceptSample\WebApi.ExceptionInterceptSample.xproj", "{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionIntercept.Tests", "test\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.xproj", "{B45E5E24-9B34-4CC2-84D7-E699D88238DB}"
 EndProject
