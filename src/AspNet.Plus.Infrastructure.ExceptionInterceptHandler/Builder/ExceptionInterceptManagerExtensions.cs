@@ -31,18 +31,14 @@ namespace AspNet.Plus.Infrastructure.Builder
         /// </summary>
         /// <param name="builder">The builder.</param>
         /// <returns></returns>
-        public static IApplicationBuilder UseExceptionInterceptManager(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseExceptionInterceptManager(this IApplicationBuilder builder, ExceptionInterceptOptions options = null)
         {
-            var exceptionInterceptManager = builder.ApplicationServices.GetService<ExceptionInterceptManager>();
-            if (exceptionInterceptManager != null)
+            var middlewareOptions = options ?? new ExceptionInterceptOptions()
             {
-                builder.UseExceptionHandler(errorApp =>
-                {
-                    errorApp.Run(exceptionInterceptManager.InterceptExceptionAsync);
-                });
-            }
+                RethrowException = false
+            };
 
-            return builder;
+            return builder.UseMiddleware<ExceptionInterceptMiddleware>(middlewareOptions);
         }
 
         /// <summary>

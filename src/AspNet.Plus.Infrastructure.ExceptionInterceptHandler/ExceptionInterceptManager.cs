@@ -29,16 +29,13 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
         /// <summary>
         /// Intercepts the specified context.
         /// </summary>
-        /// <param name="context">The context.</param>
+        /// <param name="exceptionContext">The context.</param>
         /// <returns></returns>
         /// <exception cref="AggregateException"></exception>
         /// <exception cref="System.AggregateException"></exception>
-        public async Task InterceptExceptionAsync(HttpContext context)
+        public async Task InterceptAsync(IExceptionInterceptContext exceptionContext)
         {
-            var feature = (IExceptionHandlerFeature)context.Features[typeof(IExceptionHandlerFeature)];
-            var exceptionContext = new ExceptionInterceptContext() { Context = context, Exception = feature?.Error };
             var handlerExecutionExceptions = new List<Exception>();
-
             try
             {
                 foreach (var handler in _exceptionInterceptHandlers)
