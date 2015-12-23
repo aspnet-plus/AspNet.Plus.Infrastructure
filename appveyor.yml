@@ -5,9 +5,9 @@ build_script:
 before_build:
  - ps: dnvm update-self
  - ps: dnvm upgrade
- - ps: dnvm install 1.0.0-rc1-final
+ - ps: dnvm install 1.0.0-rc1-update1
  - ps: dnvm list
- - ps: dnvm use 1.0.0-rc1-final
+ - ps: dnvm use 1.0.0-rc1-update1
  - ps: npm cache clean
  - ps: dnu restore
 clone_depth: 1
