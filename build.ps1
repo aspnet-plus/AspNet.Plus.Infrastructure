@@ -107,7 +107,7 @@ Get-ChildItem -Path .\samples -Filter *.xproj -Recurse | ForEach-Object { Build-
 Get-ChildItem -Path .\test -Filter *.xproj -Recurse | ForEach-Object -Begin { $TestIndex = 0 } -Process { Publish-TestProject -DirectoryName $_.DirectoryName -Index $TestIndex; $TestIndex++; }
 
 # Test under CLR
-#Invoke-Tests
+Invoke-Tests
 
 # Switch to Core CLR
 #dnvm use $dnxVersion -r CoreCLR

@@ -2,6 +2,14 @@ init:
   - git config --global core.autocrlf true
 build_script:  
   - ps: .\build.ps1
+before_build:
+ - ps: dnvm update-self
+ - ps: dnvm upgrade
+ - ps: dnvm install 1.0.0-rc1-final
+ - ps: dnvm list
+ - ps: dnvm use 1.0.0-rc1-final
+ - ps: npm cache clean
+ - ps: dnu restore
 clone_depth: 1
 test: off
 deploy: off
