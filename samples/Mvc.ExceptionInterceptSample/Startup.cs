@@ -3,20 +3,22 @@ using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using WebApi.ExceptionInterceptSample.ExceptionIntercepts;
-using WebApi.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers;
+using Mvc.ExceptionInterceptSample.ExceptionIntercepts;
+using Mvc.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers;
+using System;
 
 /// <summary>
-/// This Example demonstrates how intercept unhandled exceptions and delegate them to intercept handlers.
+/// This Example demonstrates how you can still show MVC's developer exception pages, if any.
+/// In essence, if the Exception Intercept Manager is requested to re-throw the original exception, the middleware will ensure
+/// that the original exception is bubbled up to the next Middleware in the pipeline.
 /// </summary>
-namespace WebApi.ExceptionInterceptSample
+namespace Mvc.ExceptionInterceptSample
 {
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {            
             services.AddExceptionInterceptManager();
-            services.AddMvc();
 
             // required if adding exception intercept handlers using IoC
             //services.AddSingleton<ExceptionCategorizer>();
@@ -27,24 +29,25 @@ namespace WebApi.ExceptionInterceptSample
         }
 
         public void Configure(IApplicationBuilder app)  
-        {            
+        {
+            // make sure that this line is injected first before adding the Exception Intercept Manager
+            app.UseDeveloperExceptionPage();
+
             // *** samples 
             // the order of addition determines the sequence of how each Exception Intercept Handler gets called. 
-            app.UseExceptionInterceptManager(new ExceptionInterceptOptions());
+            // Setting RethrowException = true, forces the original exception to be bubbled up to the next Middleware in the pipeline.
+            app.UseExceptionInterceptManager(new ExceptionInterceptOptions() { RethrowException = true }); 
             app.AddExceptionInterceptHandler(new ExceptionInitializer(new ExceptionCategorizer()));
             app.AddExceptionInterceptHandler(new ExceptionJIRALogger());
             app.AddExceptionInterceptHandler(new ExceptionDbLogger());
-            app.AddExceptionInterceptHandler(new ExceptionFinalizer());
 
             // OR if intercepts are defined in the IoC
             //app.AddExceptionInterceptHandler<ExceptionInitializer>();
             //app.AddExceptionInterceptHandler<ExceptionDbLogger>();
             //app.AddExceptionInterceptHandler<ExceptionJIRALogger>();
-            //app.AddExceptionInterceptHandler(typeof(ExceptionFinalizer));
 
-            // need for WebApi Controllers. 
-            // Note: make sure this line is added after the exception intercept manager has been added.
-            app.UseMvc();
+            // force the exception
+            app.Run(context => { throw new Exception("Application Exception"); });
         }
         
         // Entry point for the application.

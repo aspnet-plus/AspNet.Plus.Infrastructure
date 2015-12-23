@@ -22,7 +22,15 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
         private readonly ExceptionInterceptOptions _options;
         private readonly DiagnosticSource _diagnosticSource;
         private readonly ExceptionInterceptManager _exceptionInterceptManager;
-        
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExceptionInterceptMiddleware"/> class.
+        /// </summary>
+        /// <param name="loggerFactory">The logger factory.</param>
+        /// <param name="next">The next.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="diagnosticSource">The diagnostic source.</param>
+        /// <param name="exceptionInterceptManager">The exception intercept manager.</param>
         public ExceptionInterceptMiddleware(
             ILoggerFactory loggerFactory,
             RequestDelegate next,
@@ -37,6 +45,11 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
             _logger = loggerFactory.CreateLogger<ExceptionInterceptMiddleware>();            
         }
 
+        /// <summary>
+        /// Invokes the specified context.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
             try
@@ -83,7 +96,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
                         _diagnosticSource.Write("Microsoft.AspNet.Diagnostics.HandledException", new { httpContext = context, exception = ex });
                     }
 
-                  //  if (!_options.RethrowException)
+                    if (!_options.RethrowException)
                     {
                         return;
                     }
@@ -91,7 +104,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
                 catch (Exception ex2)
                 {
                     // suppress secondary exceptions, re-throw the original.
-                    _logger.LogError("An exception was thrown attempting to execute the error handler.", ex2);
+                    _logger.LogError("An exception was thrown attempting to execute the exception intercept handler.", ex2);
                 }
 
                 throw; // re-throw original if requested.
