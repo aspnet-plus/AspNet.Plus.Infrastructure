@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.0-rc1",
   "description": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler.",
   "tags": [ "" ],
   "compilationOptions": {
@@ -11,12 +11,11 @@
     "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
   },
   "dependencies": {
-    "Microsoft.AspNet.Authentication": "1.0.0-*",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
-    "Microsoft.AspNet.Diagnostics.Abstractions": "1.0.0-*",
-    "Microsoft.AspNet.Http.Abstractions": "1.0.0-*",
-    "Microsoft.AspNet.Http.Extensions": "1.0.0-*",
-    "Microsoft.AspNet.Http.Features": "1.0.0-*"
+    "Microsoft.AspNet.Authentication": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics.Abstractions": "1.0.0-rc1-update1",
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-update1",    
+    "Microsoft.AspNet.Http.Features": "1.0.0-rc1-update1"
   },
   "frameworks": {
     "net451": {
