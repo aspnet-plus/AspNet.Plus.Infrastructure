@@ -88,9 +88,15 @@ Remove-PathVariable "*Program Files\Microsoft DNX\DNVM*"
 Install-Dnvm
 
 # Install DNX
-dnvm install $dnxVersion -r CoreCLR -NoNative #-Unstable
-dnvm install $dnxVersion -r CLR -NoNative #-Unstable
+dnvm update-self
+dnvm upgrade
+dnvm install $dnxVersion -r CoreCLR -NoNative 
+dnvm install $dnxVersion -r CLR -NoNative 
 dnvm use $dnxVersion -r CLR
+dnvm list
+echo $dnxVersion  
+npm cache clean
+dnu restore
 
 # Package restore
 Get-ChildItem -Path . -Filter *.xproj -Recurse | ForEach-Object { dnu restore ("""" + $_.DirectoryName + """") }
