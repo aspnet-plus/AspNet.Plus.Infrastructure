@@ -91,7 +91,7 @@ Install-Dnvm
 dnvm update-self
 dnvm upgrade
 
-# Make sure these versions (for now) are installed
+# Make sure these versions of DNX (for now) are installed
 dnvm install 1.0.0-rc1-final -r clr -a x86
 dnvm install 1.0.0-rc1-final -r clr -a x64
 dnvm install 1.0.0-rc1-final -r coreclr -a x86

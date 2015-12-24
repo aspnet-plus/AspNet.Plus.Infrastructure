@@ -10,20 +10,12 @@
     "type": "git",
     "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
   },
-  "dependencies": {    
-    "Microsoft.AspNet.Diagnostics": "1.0.0-*",    
-    "Microsoft.AspNet.Http.Abstractions": "1.0.0-*"     
+  "dependencies": {
+    "Microsoft.AspNet.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNet.Http.Abstractions": "1.0.0-*"
   },
   "frameworks": {
-    "net451": {
-      "frameworkAssemblies": {
-        "System.Runtime": "4.0.10.0"
-      }
-    },
-    "dotnet5.4": {
-      "dependencies": {
-        "System.Reflection.Extensions": "4.0.1-beta-23516"
-      }
-    }
+    "net451": {},
+    "dotnet5.4": {}
   }
 }

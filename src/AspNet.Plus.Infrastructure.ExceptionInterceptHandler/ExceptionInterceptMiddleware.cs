@@ -9,6 +9,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Features;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
+using Microsoft.AspNet.Builder;
 
 namespace AspNet.Plus.Infrastructure.ExceptionInterceptHandler
 {
