@@ -27,19 +27,19 @@ Install-Dnvm
 dnvm update-self
 dnvm upgrade
 
-dnvm uiinstall 1.0.0-beta8  -r clr -a x86
-dnvm uiinstall 1.0.0-beta8  -r clr -a x64
-dnvm uiinstall 1.0.0-beta8  -r coreclr -a x86
-dnvm uiinstall 1.0.0-beta8  -r coreclr -a x64
+dnvm uninstall 1.0.0-beta8 -r clr -a x86
+dnvm uninstall 1.0.0-beta8 -r clr -a x64
+dnvm uninstall 1.0.0-beta8 -r coreclr -a x86
+dnvm uninstall 1.0.0-beta8 -r coreclr -a x64
 
-dnvm install 1.0.0-rc1-final  -r clr -a x86
-dnvm install 1.0.0-rc1-final  -r clr -a x64
-dnvm install 1.0.0-rc1-final  -r coreclr -a x86
-dnvm install 1.0.0-rc1-final  -r coreclr -a x64
-dnvm install 1.0.0-rc1-update1  -r clr -a x86
-dnvm install 1.0.0-rc1-update1  -r clr -a x64
-dnvm install 1.0.0-rc1-update1  -r coreclr -a x86
-dnvm install 1.0.0-rc1-update1  -r coreclr -a x64
+dnvm install 1.0.0-rc1-final -r clr -a x86
+dnvm install 1.0.0-rc1-final -r clr -a x64
+dnvm install 1.0.0-rc1-final -r coreclr -a x86
+dnvm install 1.0.0-rc1-final -r coreclr -a x64
+dnvm install 1.0.0-rc1-update1 -r clr -a x86
+dnvm install 1.0.0-rc1-update1 -r clr -a x64
+dnvm install 1.0.0-rc1-update1 -r coreclr -a x86
+dnvm install 1.0.0-rc1-update1 -r coreclr -a x64
 
 dnvm list 
 npm cache clean
