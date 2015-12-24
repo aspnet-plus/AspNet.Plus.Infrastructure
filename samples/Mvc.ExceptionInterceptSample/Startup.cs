@@ -47,7 +47,7 @@ namespace Mvc.ExceptionInterceptSample
             //app.AddExceptionInterceptHandler<ExceptionJIRALogger>();
 
             // force the exception
-            app.Run(context => { throw new Exception("Application Exception"); });
+            app.Run(context => { throw new Exception("Oh my goodness...WTF!"); });
         }
         
         // Entry point for the application.

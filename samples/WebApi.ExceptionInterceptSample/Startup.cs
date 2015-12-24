@@ -27,7 +27,7 @@ namespace WebApi.ExceptionInterceptSample
         }
 
         public void Configure(IApplicationBuilder app)  
-        {            
+        {
             // *** samples 
             // the order of addition determines the sequence of how each Exception Intercept Handler gets called. 
             app.UseExceptionInterceptManager(new ExceptionInterceptOptions());
