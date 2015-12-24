@@ -96,10 +96,6 @@ dnvm install 1.0.0-rc1-final -r clr -a x86
 dnvm install 1.0.0-rc1-final -r clr -a x64
 dnvm install 1.0.0-rc1-final -r coreclr -a x86
 dnvm install 1.0.0-rc1-final -r coreclr -a x64
-#dnvm install 1.0.0-rc1-update1 -r clr -a x86
-#dnvm install 1.0.0-rc1-update1 -r clr -a x64
-#dnvm install 1.0.0-rc1-update1 -r coreclr -a x86
-#dnvm install 1.0.0-rc1-update1 -r coreclr -a x64
 
 dnvm install $dnxVersion -r CoreCLR -NoNative 
 dnvm install $dnxVersion -r CLR -NoNative 

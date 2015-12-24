@@ -1,9 +1,8 @@
-﻿using System;
-using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
+﻿using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
-using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Http;
 using NSubstitute;
+using System;
 using Xunit;
 
 namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
@@ -74,6 +73,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
             var handler2 = Substitute.For<IExceptionInterceptHandler>();
             var handler3 = Substitute.For<IExceptionInterceptHandler>();
 
+            // force handlers to throw an internal exception
             handler1.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception1"));
             handler2.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception2"));
             handler3.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Throw(new Exception("Exception3"));
@@ -83,13 +83,13 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
             unit.AddExceptionInterceptHandler(handler2);
             unit.AddExceptionInterceptHandler(handler3);
 
-            // act
+            // act/assert
             var aggException = await Assert.ThrowsAnyAsync<AggregateException>(async () =>
             {
                 await unit.InterceptAsync(exceptionInterceptContext);
             });
 
-            // assert invokes
+            // assert invocations 
             await handler1.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
             await handler2.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
             await handler3.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());

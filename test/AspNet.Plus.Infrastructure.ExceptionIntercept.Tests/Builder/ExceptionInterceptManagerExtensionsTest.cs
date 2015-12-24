@@ -2,7 +2,6 @@
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
 using Microsoft.AspNet.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
@@ -62,7 +61,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
                     app.UseExceptionInterceptManager();
                     app.AddExceptionInterceptHandler(handler);
 
-                    // assign exception received to expectedException
+                    // assign exception received to expectedException variable to assert later
                     handler.When(x => x.HandleAsync(Arg.Any<IExceptionInterceptContext>())).Do(x => expectedException = x.Arg<IExceptionInterceptContext>().Exception);
 
                     // act
@@ -172,6 +171,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
         {
             var receivedException = (Exception)null;
             var thrownException = new InvalidOperationException("SomeException");
+            var exceptionBuddled = false;
 
             using (var server = TestServer.Create(
                 app =>
@@ -181,11 +181,12 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
                     {
                         try
                         {
-                            await next.Invoke(context);
+                            await next.Invoke(context);                            
                         }
                         catch (Exception ex)
                         {
                             receivedException = ex; // this exception should not be received.
+                            exceptionBuddled = true;
                         }
                     });
 
@@ -213,6 +214,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
 
             // assert
             Assert.Null(receivedException);
+            Assert.False(exceptionBuddled, "The exception should not have been bubbled.");
         }
 
         [Fact]
@@ -220,6 +222,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
         {
             var receivedException = (Exception)null;
             var thrownException = new InvalidOperationException("SomeException");
+            var exceptionBuddled = false;
 
             using (var server = TestServer.Create(
                 app =>
@@ -234,6 +237,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
                         catch (Exception ex)
                         {
                             receivedException = ex; // this exception should be received.
+                            exceptionBuddled = true;
                         }
                     });
 
@@ -261,6 +265,7 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.Builder
 
             // assert
             Assert.Same(thrownException, receivedException);
+            Assert.True(exceptionBuddled, "The exception should have been bubbled.");
         }
     }
 }
