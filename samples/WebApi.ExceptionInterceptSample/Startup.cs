@@ -42,7 +42,7 @@ namespace WebApi.ExceptionInterceptSample
             //app.AddExceptionInterceptHandler<ExceptionJIRALogger>();
             //app.AddExceptionInterceptHandler(typeof(ExceptionFinalizer));
 
-            // need for WebApi Controllers. 
+            // needed for WebApi Controllers. 
             // Note: make sure this line is added after the exception intercept manager has been added.
             app.UseMvc();
         }
