@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. src", "02. src", "{BFA64C32-4422-4AF9-8ECF-D2ECF2E0230B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{D94023CF-59CC-4D69-B30B-991C7D52F49A}"
 	ProjectSection(SolutionItems) = preProject
+		AspNet.Plus.Infrastructure.licenseheader = AspNet.Plus.Infrastructure.licenseheader
 		global.json = global.json
+		VersionInfo.cs = VersionInfo.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. test", "04. test", "{82D3E58B-6B1A-4236-B86F-DCC2A5E58470}"

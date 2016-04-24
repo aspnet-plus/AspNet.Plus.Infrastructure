@@ -1,0 +1,19 @@
+﻿# https://github.com/rubicon-oss/LicenseHeaderManager/wiki/Expendable-Properties
+extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+// ASP.NET.Plus
+// Copyright (c) %CurrentYear% ZoneMatrix Inc.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. 
+
+extensions: .aspx .ascx
+<%-- 
+	ASP.NET.Plus
+	Copyright (c) %CurrentYear% ZoneMatrix Inc.
+	Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. 
+--%>
+extensions:  .xml .config .xsd
+<!--
+	ASP.NET.Plus
+	Copyright (c) %CurrentYear% ZoneMatrix Inc.
+	Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. 
+-->

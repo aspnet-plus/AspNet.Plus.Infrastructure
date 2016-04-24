@@ -15,5 +15,10 @@
     <DevelopmentServerPort>62671</DevelopmentServerPort>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
+  <ItemGroup>
+    <Content Include="..\..\AspNet.Plus.Infrastructure.licenseheader">
+      <Link>AspNet.Plus.Infrastructure.licenseheader</Link>
+    </Content>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

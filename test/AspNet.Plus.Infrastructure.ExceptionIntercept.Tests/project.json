@@ -6,7 +6,7 @@
   "dependencies": {
     "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.0-*",
     "Microsoft.AspNet.TestHost": "1.0.0-rc1-final",
-    "NSubstitute": "1.9.2",    
+    "NSubstitute": "1.10.0",    
     "xunit": "2.1.0-rc1-*",
     "xunit.runner.dnx": "2.1.0-rc1-*",
     "xunit.runner.reporters": "2.1.0-rc1-*"
