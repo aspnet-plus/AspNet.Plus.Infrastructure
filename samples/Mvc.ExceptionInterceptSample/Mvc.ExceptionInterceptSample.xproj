@@ -16,7 +16,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
   <ItemGroup>
-    <Content Include="..\..\AspNet.Plus.Infrastructure.licenseheader">
+    <Content Include="..\..\header\AspNet.Plus.Infrastructure.licenseheader">
       <Link>AspNet.Plus.Infrastructure.licenseheader</Link>
     </Content>
   </ItemGroup>
