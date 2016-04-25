@@ -1,7 +1,25 @@
 {
-  "version": "1.0.0-*",
-  "description": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler.",
-  "tags": [ "" ],
+  "version": "1.0.0-rc1-100",
+  "description": "A simple Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
+  "copyright": "Copyright 2016, ZoneMatrix",
+  "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+  "projectUrl": "https://github.com/aspnet-plus/AspNet.Plus.Infrastructure",
+  "iconUrl": "http://avatars2.githubusercontent.com/u/16177606",
+  "releaseNotes": "AspNet.Plus.Infrastructure - ASP.NET Core Global Exception Handler.",
+  "requireLicenseAcceptance": true,
+  "owners": [
+    "ZoneMatrix"
+  ],
+  "authors": [
+    "codematrix"
+  ],
+  "tags": [
+    "DNX",
+    "ASP.NET",
+    "Global Exception Handling",
+    "WebAPI",
+    "Mvc"
+  ],
   "compilationOptions": {
     "warningsAsErrors": true,
     "keyFile": "../../key.snk"
@@ -19,4 +37,5 @@
     "dotnet5.4": { }
   }
 }
+
 

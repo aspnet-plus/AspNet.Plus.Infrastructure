@@ -18,7 +18,7 @@
 
   "frameworks": {
     "dnx451": { },
-    "dnxcore50": { }
+    "dotnet5.4": { }
   },
 
   "commands": {
@@ -34,4 +34,3 @@
     "**.vspscc"
   ]
 }
-

@@ -9,7 +9,7 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-*",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.0-*" 
@@ -17,7 +17,7 @@
 
   "frameworks": {
     "dnx451": { },
-    "dnxcore50": { }
+    "dotnet5.4": { }
   },
 
   "commands": {
