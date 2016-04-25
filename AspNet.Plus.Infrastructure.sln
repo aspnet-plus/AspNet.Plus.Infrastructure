@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. src", "02. src", "{BFA64C32-4422-4AF9-8ECF-D2ECF2E0230B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{D94023CF-59CC-4D69-B30B-991C7D52F49A}"
-	ProjectSection(SolutionItems) = preProject		
+	ProjectSection(SolutionItems) = preProject
 		header\AspNet.Plus.Infrastructure.licenseheader = header\AspNet.Plus.Infrastructure.licenseheader
 		global.json = global.json
 		header\VersionInfo.cs = header\VersionInfo.cs
