@@ -6,10 +6,12 @@ using AspNet.Plus.Infrastructure.Builder;
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Mvc.ExceptionInterceptSample.ExceptionIntercepts;
 using Mvc.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers;
 using System;
+using System.Threading.Tasks;
 
 /// <summary>
 /// This Example demonstrates how you can still show MVC's developer exception pages, if any.
@@ -18,8 +20,15 @@ using System;
 /// </summary>
 namespace Mvc.ExceptionInterceptSample
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Configures the services.
+        /// </summary>
+        /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {            
             services.AddExceptionInterceptManager();
@@ -32,6 +41,10 @@ namespace Mvc.ExceptionInterceptSample
             //services.AddSingleton(typeof(ExceptionJIRALogger));
         }
 
+        /// <summary>
+        /// Configures the specified application.
+        /// </summary>
+        /// <param name="app">The application.</param>
         public void Configure(IApplicationBuilder app)  
         {
             // make sure that this line is injected first before adding the Exception Intercept Manager
@@ -51,7 +64,20 @@ namespace Mvc.ExceptionInterceptSample
             //app.AddExceptionInterceptHandler<ExceptionJIRALogger>();
 
             // force the exception
-            app.Run(context => { throw new Exception("Oh my goodness...WTF!"); });
+            // The broken section of our application.
+            app.Map("/throw", throwApp =>
+            {
+                throwApp.Run(context => { throw new Exception("Oh my goodness...WTF!"); });
+            });
+
+            // The home page.
+            app.Run(async context =>
+            {
+                context.Response.ContentType = "text/html";
+                await context.Response.WriteAsync("<html><body>Welcome to the sample<br><br>\r\n");
+                await context.Response.WriteAsync("Click here to throw an exception: <a href=\"/throw\">throw</a>\r\n");
+                await context.Response.WriteAsync("</body></html>\r\n");
+            });
         }
         
         // Entry point for the application.

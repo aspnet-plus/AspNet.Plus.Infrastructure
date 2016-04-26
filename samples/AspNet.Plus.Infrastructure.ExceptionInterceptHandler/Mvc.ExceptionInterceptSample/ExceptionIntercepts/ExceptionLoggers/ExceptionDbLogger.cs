@@ -5,10 +5,19 @@
 using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using System.Threading.Tasks;
 
-namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers
+namespace Mvc.ExceptionInterceptSample.ExceptionIntercepts.ExceptionLoggers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces.IExceptionInterceptHandler" />
     public class ExceptionDbLogger : IExceptionInterceptHandler
     {
+        /// <summary>
+        /// Handles exception asynchronously.
+        /// </summary>
+        /// <param name="exceptionContext">The exception context.</param>
+        /// <returns></returns>
         public Task HandleAsync(IExceptionInterceptContext exceptionContext)
         {
             var category = (ExceptionCategory)exceptionContext.Context.Items["exception.category"];

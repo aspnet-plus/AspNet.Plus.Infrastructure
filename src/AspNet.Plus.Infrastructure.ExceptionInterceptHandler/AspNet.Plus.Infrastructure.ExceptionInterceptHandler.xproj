@@ -22,8 +22,8 @@
     <ProduceOutputsOnBuild>True</ProduceOutputsOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="..\..\header\AspNet.Plus.Infrastructure.licenseheader">
-      <Link>AspNet.Plus.Infrastructure.licenseheader</Link>
+    <Content Include="..\..\header\AspNet.Plus.licenseheader">
+      <Link>AspNet.Plus.licenseheader</Link>
     </Content>
     <Content Include="..\..\header\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>

@@ -6,8 +6,11 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 
-namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
+namespace Mvc.ExceptionInterceptSample.ExceptionIntercepts
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public enum ExceptionCategoryType
     {
         /// <summary>
@@ -26,6 +29,9 @@ namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
         Unhandled
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExceptionCategory
     {
         public ExceptionCategoryType Category { get; internal set; }
@@ -34,8 +40,16 @@ namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
         public bool DeveloperMode { get; internal set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExceptionCategorizer
     {
+        /// <summary>
+        /// Categorizers the specified exception.
+        /// </summary>
+        /// <param name="exception">The exception.</param>
+        /// <returns></returns>
         public ExceptionCategory Categorizer(Exception exception)
         {
             bool developerMode = false;

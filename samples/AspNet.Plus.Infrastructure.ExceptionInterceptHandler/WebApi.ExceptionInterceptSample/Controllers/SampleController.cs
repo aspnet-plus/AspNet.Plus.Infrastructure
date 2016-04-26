@@ -9,9 +9,21 @@ using System.Threading.Tasks;
 
 namespace WebApi.ExceptionInterceptSample.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNet.Mvc.Controller" />
     [Route("api/[controller]")]
     public class SampleController : Controller
     {
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        /// <exception cref="UnauthorizedAccessException">No such user exists for login.</exception>
+        /// <exception cref="ValidationException">Missing user name.</exception>
+        /// <exception cref="ArgumentNullException"></exception>
         [HttpGet("{id}")]
         public Task<string> Get(int id)
         {

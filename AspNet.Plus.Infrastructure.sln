@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. src", "02. src", "{BFA6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{D94023CF-59CC-4D69-B30B-991C7D52F49A}"
 	ProjectSection(SolutionItems) = preProject
-		header\AspNet.Plus.Infrastructure.licenseheader = header\AspNet.Plus.Infrastructure.licenseheader
+		header\AspNet.Plus.licenseheader = header\AspNet.Plus.licenseheader
 		global.json = global.json
 		header\VersionInfo.cs = header\VersionInfo.cs
 	EndProjectSection
@@ -18,11 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. samples", "03. samples"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionInterceptHandler", "src\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\AspNet.Plus.Infrastructure.ExceptionInterceptHandler.xproj", "{E1B8B885-436F-480D-851A-C466E07DD6C8}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.ExceptionInterceptSample", "samples\WebApi.ExceptionInterceptSample\WebApi.ExceptionInterceptSample.xproj", "{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionIntercept.Tests", "test\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.xproj", "{B45E5E24-9B34-4CC2-84D7-E699D88238DB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc.ExceptionInterceptSample", "samples\Mvc.ExceptionInterceptSample\Mvc.ExceptionInterceptSample.xproj", "{5A9322F5-E8EE-4544-855B-6B7625933BFB}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc.ExceptionInterceptSample", "samples\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\Mvc.ExceptionInterceptSample\Mvc.ExceptionInterceptSample.xproj", "{5A9322F5-E8EE-4544-855B-6B7625933BFB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.ExceptionInterceptSample", "samples\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\WebApi.ExceptionInterceptSample\WebApi.ExceptionInterceptSample.xproj", "{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,6 @@ Global
 		{E1B8B885-436F-480D-851A-C466E07DD6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1B8B885-436F-480D-851A-C466E07DD6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1B8B885-436F-480D-851A-C466E07DD6C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B45E5E24-9B34-4CC2-84D7-E699D88238DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B45E5E24-9B34-4CC2-84D7-E699D88238DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B45E5E24-9B34-4CC2-84D7-E699D88238DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,14 +42,18 @@ Global
 		{5A9322F5-E8EE-4544-855B-6B7625933BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9322F5-E8EE-4544-855B-6B7625933BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A9322F5-E8EE-4544-855B-6B7625933BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E1B8B885-436F-480D-851A-C466E07DD6C8} = {BFA64C32-4422-4AF9-8ECF-D2ECF2E0230B}
-		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D} = {B87383FE-EF04-4AD0-ABBC-52F06FD5FFA2}
 		{B45E5E24-9B34-4CC2-84D7-E699D88238DB} = {82D3E58B-6B1A-4236-B86F-DCC2A5E58470}
 		{5A9322F5-E8EE-4544-855B-6B7625933BFB} = {B87383FE-EF04-4AD0-ABBC-52F06FD5FFA2}
+		{5C0BC1B4-9A36-4F91-AF08-9F6921E2667D} = {B87383FE-EF04-4AD0-ABBC-52F06FD5FFA2}
 	EndGlobalSection
 EndGlobal
