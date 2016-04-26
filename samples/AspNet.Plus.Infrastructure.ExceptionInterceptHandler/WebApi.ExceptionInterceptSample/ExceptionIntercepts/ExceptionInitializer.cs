@@ -7,17 +7,30 @@ using System;
 using System.Dynamic;
 using System.Threading.Tasks;
 
-namespace Mvc.ExceptionInterceptSample.ExceptionIntercepts
+namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <seealso cref="AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces.IExceptionInterceptHandler" />
     public class ExceptionInitializer : IExceptionInterceptHandler
     {
         private readonly ExceptionCategorizer _exceptionCategorizer;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExceptionInitializer"/> class.
+        /// </summary>
+        /// <param name="exceptionCategorizer">The exception categorizer.</param>
         public ExceptionInitializer(ExceptionCategorizer exceptionCategorizer)
         {
             _exceptionCategorizer = exceptionCategorizer;
         }
 
+        /// <summary>
+        /// Handles exception asynchronously.
+        /// </summary>
+        /// <param name="exceptionContext">The exception context.</param>
+        /// <returns></returns>
         public Task HandleAsync(IExceptionInterceptContext exceptionContext)
         {
             var category = _exceptionCategorizer.Categorizer(exceptionContext.Exception);
