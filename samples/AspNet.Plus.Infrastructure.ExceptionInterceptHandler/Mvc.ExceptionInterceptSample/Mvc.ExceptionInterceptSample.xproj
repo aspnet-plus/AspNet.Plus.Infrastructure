@@ -19,8 +19,8 @@
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\header\AspNet.Plus.Infrastructure.licenseheader">
-      <Link>AspNet.Plus.Infrastructure.licenseheader</Link>
+    <Content Include="..\..\..\header\AspNet.Plus.licenseheader">
+      <Link>AspNet.Plus.licenseheader</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />

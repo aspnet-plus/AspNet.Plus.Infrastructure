@@ -16,8 +16,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
   <ItemGroup>
-    <Content Include="..\..\..\header\AspNet.Plus.Infrastructure.licenseheader">
-      <Link>AspNet.Plus.Infrastructure.licenseheader</Link>
+    <Content Include="..\..\..\header\AspNet.Plus.licenseheader">
+      <Link>AspNet.Plus.licenseheader</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />

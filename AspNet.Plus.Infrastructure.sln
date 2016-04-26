@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. src", "02. src", "{BFA6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{D94023CF-59CC-4D69-B30B-991C7D52F49A}"
 	ProjectSection(SolutionItems) = preProject
-		header\AspNet.Plus.Infrastructure.licenseheader = header\AspNet.Plus.Infrastructure.licenseheader
+		header\AspNet.Plus.licenseheader = header\AspNet.Plus.licenseheader
 		global.json = global.json
 		header\VersionInfo.cs = header\VersionInfo.cs
 	EndProjectSection
