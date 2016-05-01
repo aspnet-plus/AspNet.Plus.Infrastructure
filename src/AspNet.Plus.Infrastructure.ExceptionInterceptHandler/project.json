@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-rc1-101",
+  "version": "1.0.0",
   "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
   "copyright": "Copyright 2016, ZoneMatrix",
   "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
