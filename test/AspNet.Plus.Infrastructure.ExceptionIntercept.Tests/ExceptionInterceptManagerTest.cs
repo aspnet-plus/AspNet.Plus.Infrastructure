@@ -7,7 +7,7 @@ using AspNet.Plus.Infrastructure.ExceptionInterceptHandler.Interfaces;
 using Microsoft.AspNet.Http;
 using NSubstitute;
 using System;
-using Xunit;
+using Xunit; 
 
 namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
 {
