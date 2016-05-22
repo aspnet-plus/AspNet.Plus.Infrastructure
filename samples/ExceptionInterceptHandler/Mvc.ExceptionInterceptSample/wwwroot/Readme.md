@@ -1,1 +1,0 @@
-﻿Sample demonstrating Exception Intercept Handling.

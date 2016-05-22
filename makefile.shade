@@ -1,9 +1,0 @@
-
-var VERSION='0.1'
-var FULL_VERSION='0.1'
-var AUTHORS='codematrix.'
-
-use-standard-lifecycle
-k-standard-goals
-
-#xml-docs-test .clean .build-compile description='Check generated XML documentation files for errors' target='test' k-xml-docs-test
