@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0-rc2",
+  "title": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler",
+  "language": "en-US",
+  "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
+  "copyright": "Copyright 2016, ZoneMatrix",
+  "packOptions": {
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+    "projectUrl": "https://github.com/aspnet-plus/AspNet.Plus.Infrastructure",
+    "iconUrl": "http://avatars2.githubusercontent.com/u/16177606",
+    "summary": "This nuget package sites on top of the Microsoft.AspNetCore.Diagnostics to provide an ability to intercept unhandled exceptions and propagate exception across multiple handlers (intercepts) in an orderly fashion.",
+    "releaseNotes": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler - ASP.NET Core Global Exception Handler.",
+    "requireLicenseAcceptance": true,
+    "owners": [ "ZoneMatrix" ],
+    "authors": [ "codematrix" ],
+    "tags": [
+      "DNX",
+      "ASP.NET",
+      "AspNetCore",
+      "Exception Handling",
+      "WebAPI",
+      "Mvc"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
+    }
+  },
+  "buildOptions": {
+    "warningsAsErrors": true,
+    "keyFile": "../../key.snk"
+  },
+  "scripts": {
+    "postcompile": [ "dotnet pack -c release   -o ../../artifacts/packages  --no-build --version-suffix %project:Version% project.json" ]
+  },
+  "dependencies": {
+    "Microsoft.NETCore.Platforms": "1.0.1-rc2-24027",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Http.Abstractions": "1.0.0-rc2-final"
+  },
+  "frameworks": {
+    "net451": { },
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50"
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "version": "1.0.0-*",
+          "type": "platform"
+        }
+      }
+    }
+  }
+}
