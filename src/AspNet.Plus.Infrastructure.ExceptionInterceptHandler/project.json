@@ -4,6 +4,7 @@
   "language": "en-US",
   "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
   "copyright": "Copyright 2016, ZoneMatrix",
+  "authors": [ "AspNet.Plus contributors" ],
   "packOptions": {
     "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
     "projectUrl": "https://github.com/aspnet-plus/AspNet.Plus.Infrastructure",
@@ -12,7 +13,7 @@
     "releaseNotes": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler - ASP.NET Core Global Exception Handler.",
     "requireLicenseAcceptance": true,
     "owners": [ "ZoneMatrix" ],
-    "authors": [ "codematrix" ],
+    "authors": [ "AspNet.Plus contributors" ],
     "tags": [
       "DNX",
       "ASP.NET",
