@@ -9,7 +9,7 @@ A set of Nuget packages to help ASP.NET 5 developers build simple quality infras
 
 **Available Nuget packages**
 
-* [![NuGet version](http://img.shields.io/nuget/v/AspNet.Plus.Infrastructure.ExceptionInterceptHandler.svg?style=flat)](https://www.nuget.org/packages/AspNet.Plus.Infrastructure.ExceptionInterceptHandler/1.0.0-rc2/)  AspNet.Plus.Infrastructure.ExceptionInterceptHandler
+* [![NuGet version](http://img.shields.io/nuget/v/AspNet.Plus.Infrastructure.ExceptionInterceptHandler.svg?style=flat)](https://www.nuget.org/packages/AspNet.Plus.Infrastructure.ExceptionInterceptHandler/)  AspNet.Plus.Infrastructure.ExceptionInterceptHandler
 
 
 ### Helpful Links
