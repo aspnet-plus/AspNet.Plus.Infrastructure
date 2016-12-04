@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler",
   "language": "en-US",
   "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
@@ -35,6 +35,7 @@
     },
     "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
     "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection" :  "1.0.0",
     "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
     "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
     "Microsoft.Net.Http.Headers": "1.0.0",

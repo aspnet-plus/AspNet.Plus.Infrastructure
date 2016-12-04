@@ -4,7 +4,7 @@
       "version": "1.0.0",
       "type": "platform"
     },
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.1",
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.2",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
