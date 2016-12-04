@@ -7,7 +7,7 @@
       "version": "1.0.0",
       "type": "platform"
     },
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.2",
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.3",
     "Microsoft.AspNetCore.TestHost": "1.0.0",
     "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
     "NSubstitute": "2.0.0-rc",
