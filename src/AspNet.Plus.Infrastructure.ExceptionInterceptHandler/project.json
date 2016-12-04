@@ -1,9 +1,9 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.7",
   "title": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler",
   "language": "en-US",
   "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
-  "copyright": "Copyright 2016, ZoneMatrix",
+  "copyright": "Copyright 2016, AspNet.Plus contributors",
   "authors": [ "AspNet.Plus contributors" ],
   "packOptions": {
     "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -12,7 +12,7 @@
     "summary": "This nuget package sites on top of the Microsoft.AspNetCore.Diagnostics to provide an ability to intercept unhandled exceptions and propagate exception across multiple handlers (intercepts) in an orderly fashion.",
     "releaseNotes": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler - ASP.NET Core Global Exception Handler.",
     "requireLicenseAcceptance": true,
-    "owners": [ "ZoneMatrix" ],
+    "owners": [ "AspNet.Plus contributors" ],
     "authors": [ "AspNet.Plus contributors" ],
     "tags": [
       "DNX",
@@ -27,26 +27,15 @@
       "url": "git://github.com/aspnet-plus/aspnet.plus.infrastructure"
     }
   },
-
-  "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
-    "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
-    "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
-    "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
-    "Microsoft.Net.Http.Headers": "1.0.0",
-    "Microsoft.AspNetCore.Diagnostics": "1.0.0"
+  "dependencies": {    
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Http.Extensions": "1.1.0-preview1-final",
+    "Microsoft.Extensions.Logging.Abstractions": "1.1.0-preview1-final",
+    "Microsoft.Net.Http.Headers": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0-preview1-final"
   },
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "portable-net45+win8"
-      ]
-    }
+    "net461": {}
   },
 
   "buildOptions": {

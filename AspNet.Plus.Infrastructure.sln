@@ -5,8 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{52A8F7FA-7961-44D0-AB5E-56ECC65F7F8B}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		header\AspNet.Plus.licenseheader = header\AspNet.Plus.licenseheader
+		build.ps1 = build.ps1
 		global.json = global.json
+		README.md = README.md
 		header\VersionInfo.cs = header\VersionInfo.cs
 	EndProjectSection
 EndProject
