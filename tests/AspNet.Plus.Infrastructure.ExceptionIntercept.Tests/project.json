@@ -2,24 +2,16 @@
   "version": "1.0.0-*",
   "testRunner": "xunit",
 
-  "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.3",
-    "Microsoft.AspNetCore.TestHost": "1.0.0",
-    "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
+  "dependencies": {    
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.7",
+    "Microsoft.AspNetCore.TestHost": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0-preview1-final",
     "NSubstitute": "2.0.0-rc",
     "dotnet-test-xunit": "2.2.0-*",
     "xunit": "2.2.0-*"
   },
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "portable-net45+win8"
-      ]
+    "net461": {      
     }
   },
   "buildOptions": {
