@@ -1,13 +1,13 @@
 ﻿{
-  "dependencies": {    
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.7",
-    "Microsoft.AspNetCore.Diagnostics": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Mvc": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.StaticFiles": "1.1.0-preview1-final",
-    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0-preview1-final",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0-preview1-final",
+  "dependencies": {
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.1.0-*",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.0",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0-preview1-final"
   },
   "frameworks": {
@@ -15,7 +15,7 @@
   },
 
   "tools": {
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview1-final"
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
   },
 
   "buildOptions": {
