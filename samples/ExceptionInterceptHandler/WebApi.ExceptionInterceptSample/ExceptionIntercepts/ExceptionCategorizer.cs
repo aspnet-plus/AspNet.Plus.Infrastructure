@@ -71,7 +71,7 @@ namespace WebApi.ExceptionInterceptSample.ExceptionIntercepts
             {
                 category.Category = ExceptionCategoryType.Unauthorization;
                 category.HttpStatus = HttpStatusCode.Unauthorized;
-                category.ErrorMessage = developerMode ? exception.Message : "Unauthorized access. Your request wad denied.";
+                category.ErrorMessage = developerMode ? exception.Message : "Unauthorized access. Your request was denied.";
                 return category;
             }
 

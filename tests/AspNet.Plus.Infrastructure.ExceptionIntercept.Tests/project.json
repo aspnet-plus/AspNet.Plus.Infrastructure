@@ -2,10 +2,10 @@
   "version": "1.0.0-*",
   "testRunner": "xunit",
 
-  "dependencies": {    
-    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.0.7",
-    "Microsoft.AspNetCore.TestHost": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0-preview1-final",
+  "dependencies": {
+    "AspNet.Plus.Infrastructure.ExceptionInterceptHandler": "1.1.0-*",
+    "Microsoft.AspNetCore.TestHost": "1.1.0",
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
     "NSubstitute": "2.0.0-rc",
     "dotnet-test-xunit": "2.2.0-*",
     "xunit": "2.2.0-*"

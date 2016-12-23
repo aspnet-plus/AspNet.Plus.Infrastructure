@@ -1,5 +1,5 @@
 {
-  "version": "1.0.7",
+  "version": "1.1.0",
   "title": "AspNet.Plus.Infrastructure.ExceptionInterceptHandler",
   "language": "en-US",
   "description": "A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).",
@@ -28,11 +28,11 @@
     }
   },
   "dependencies": {    
-    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Http.Extensions": "1.1.0-preview1-final",
-    "Microsoft.Extensions.Logging.Abstractions": "1.1.0-preview1-final",
-    "Microsoft.Net.Http.Headers": "1.1.0-preview1-final",
-    "Microsoft.AspNetCore.Diagnostics": "1.1.0-preview1-final"
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
+    "Microsoft.AspNetCore.Http.Extensions": "1.1.0",
+    "Microsoft.Extensions.Logging.Abstractions": "1.1.0",
+    "Microsoft.Net.Http.Headers": "1.1.0",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0"
   },
   "frameworks": {
     "net461": {}
@@ -43,6 +43,6 @@
     "keyFile": "../../key.snk"
   },
   "scripts": {
-    "postcompile": [ "dotnet pack -c release   -o ../../artifacts/packages  --no-build --version-suffix %project:Version% project.json" ]
+    "postcompile": [ "dotnet pack -c release   -o ../../artifacts  --no-build --version-suffix %project:Version% project.json" ]
   }
 }
