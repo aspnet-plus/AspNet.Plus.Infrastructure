@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).</Description>
-    <Copyright>Copyright 2017, AspNet.Plus contributors</Copyright>
+    <Copyright>Copyright 2018, AspNet.Plus contributors</Copyright>
     <AssemblyTitle>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</AssemblyTitle>
     <NeutralLanguage>en-US</NeutralLanguage>
     <VersionPrefix>1.0.7</VersionPrefix>
@@ -24,8 +24,8 @@
     <RepositoryUrl>git://github.com/aspnet-plus/aspnet.plus.infrastructure</RepositoryUrl>
     <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
