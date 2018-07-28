@@ -1,5 +1,5 @@
 // ASP.NET.Plus
-// Copyright (c) 2016 AspNet.Plus.
+// Copyright (c) 2018 AspNet.Plus.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. 
 
 using Microsoft.AspNetCore.Diagnostics;
