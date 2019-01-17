@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).</Description>
+    <Copyright>Copyright 2016, AspNet.Plus contributors</Copyright>
+    <AssemblyTitle>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <Authors>AspNet.Plus contributors</Authors>
+    <TargetFramework>net461</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</AssemblyName>
+    <AssemblyOriginatorKeyFile>../../key.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</PackageId>
+    <PackageTags>DNX;ASP.NET;AspNetCore;Exception Handling;WebAPI;Mvc</PackageTags>
+    <PackageReleaseNotes>AspNet.Plus.Infrastructure.ExceptionInterceptHandler - ASP.NET Core Global Exception Handler.</PackageReleaseNotes>
+    <PackageIconUrl>http://avatars2.githubusercontent.com/u/16177606</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/aspnet-plus/AspNet.Plus.Infrastructure</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/aspnet-plus/aspnet.plus.infrastructure</RepositoryUrl>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
+  </ItemGroup>
+
+  <Target Name="PostcompileScript" AfterTargets="Build">
+    <Exec Command="dotnet pack -c release -o ../../artifacts --no-build --version-suffix $(Version) project.json" />
+  </Target>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
