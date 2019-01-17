@@ -79,6 +79,7 @@ namespace Mvc.ExceptionInterceptSample.ExceptionIntercepts
             category.Category = ExceptionCategoryType.Unhandled;
             category.HttpStatus = HttpStatusCode.InternalServerError;
             category.ErrorMessage = developerMode ? exception.Message : "Oops, something went wrong with your request.";
+
             return category;
         }
     }

@@ -59,7 +59,7 @@ namespace Mvc.ExceptionInterceptSample.ExceptionIntercepts
             exceptionContext.Context.Items["exception.category"] = category;
             exceptionContext.Context.Items["exception.response"] = response;
 
-            return Task.FromResult(0);
+            return Task.CompletedTask;
         }
     }
 }
