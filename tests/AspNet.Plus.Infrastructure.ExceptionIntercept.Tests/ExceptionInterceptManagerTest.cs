@@ -57,9 +57,9 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
             await handler3.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
 
             // assert sequence
-            Assert.Equal(atHandler1Call, 1);
-            Assert.Equal(atHandler2Call, 2);
-            Assert.Equal(atHandler3Call, 3);
+            Assert.Equal(1, atHandler1Call);
+            Assert.Equal(2, atHandler2Call);
+            Assert.Equal(3, atHandler3Call);
         }
 
         [Fact]
@@ -94,9 +94,9 @@ namespace AspNet.Plus.Infrastructure.ExceptionIntercept.Tests
             await handler2.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
             await handler3.Received(1).HandleAsync(Arg.Any<IExceptionInterceptContext>());
 
-            Assert.Equal(aggException.InnerExceptions[0].Message, "Exception1");
-            Assert.Equal(aggException.InnerExceptions[1].Message, "Exception2");
-            Assert.Equal(aggException.InnerExceptions[2].Message, "Exception3");
+            Assert.Equal("Exception1", aggException.InnerExceptions[0].Message);
+            Assert.Equal("Exception2", aggException.InnerExceptions[1].Message);
+            Assert.Equal("Exception3", aggException.InnerExceptions[2].Message);
         }
         #endregion InterceptExceptionAsync
     }

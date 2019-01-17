@@ -2,13 +2,6 @@ echo "build: Build started"
 
 Push-Location $PSScriptRoot
 
-function Invoke-Tests
-{
-  [cmdletbinding()]
-  param([string] $DirectoryName)
-  & dotnet test ("""" + $DirectoryName + """") -c Release; if($LASTEXITCODE -ne 0) { exit 1 }
-}
-
 if(Test-Path .\artifacts) {
 	echo "build: Cleaning .\artifacts"
 	Remove-Item .\artifacts -Force -Recurse
@@ -32,9 +25,3 @@ foreach ($src in ls src/*) {
 
     Pop-Location
 }
-
-# Test
-Get-ChildItem -Path .\tests -Filter *.xproj -Recurse | ForEach-Object { Invoke-Tests $_.DirectoryName }
-
-Pop-Location
-

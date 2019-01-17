@@ -1,14 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. Solution Items", "{52A8F7FA-7961-44D0-AB5E-56ECC65F7F8B}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		header\AspNet.Plus.licenseheader = header\AspNet.Plus.licenseheader
 		build.ps1 = build.ps1
-		global.json = global.json
 		README.md = README.md
 		header\VersionInfo.cs = header\VersionInfo.cs
 	EndProjectSection
@@ -19,15 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. samples", "03. samples"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. tests", "04. tests", "{BA143B74-F074-48B6-B2C6-45B3CFFDA79A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionInterceptHandler", "src\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\AspNet.Plus.Infrastructure.ExceptionInterceptHandler.xproj", "{7FC6ACE8-F856-4151-8EC2-0B4DDB35338D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExceptionInterceptHandler", "ExceptionInterceptHandler", "{5DF26186-B69F-496B-A765-DA8F99464EC6}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc.ExceptionInterceptSample", "samples\ExceptionInterceptHandler\Mvc.ExceptionInterceptSample\Mvc.ExceptionInterceptSample.xproj", "{5A9322F5-E8EE-4544-855B-6B7625933BFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNet.Plus.Infrastructure.ExceptionInterceptHandler", "src\AspNet.Plus.Infrastructure.ExceptionInterceptHandler\AspNet.Plus.Infrastructure.ExceptionInterceptHandler.csproj", "{7FC6ACE8-F856-4151-8EC2-0B4DDB35338D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApi.ExceptionInterceptSample", "samples\ExceptionInterceptHandler\WebApi.ExceptionInterceptSample\WebApi.ExceptionInterceptSample.xproj", "{06F6399B-9D71-42F4-ADF0-7FAEFAABE708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc.ExceptionInterceptSample", "samples\ExceptionInterceptHandler\Mvc.ExceptionInterceptSample\Mvc.ExceptionInterceptSample.csproj", "{5A9322F5-E8EE-4544-855B-6B7625933BFB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet.Plus.Infrastructure.ExceptionIntercept.Tests", "tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.xproj", "{37CEE47F-FC8F-41C5-8713-29AD1E3D3E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.ExceptionInterceptSample", "samples\ExceptionInterceptHandler\WebApi.ExceptionInterceptSample\WebApi.ExceptionInterceptSample.csproj", "{06F6399B-9D71-42F4-ADF0-7FAEFAABE708}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNet.Plus.Infrastructure.ExceptionIntercept.Tests", "tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests\AspNet.Plus.Infrastructure.ExceptionIntercept.Tests.csproj", "{37CEE47F-FC8F-41C5-8713-29AD1E3D3E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,10 +55,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7FC6ACE8-F856-4151-8EC2-0B4DDB35338D} = {DE484585-243D-4CC4-8502-BF92D3D701CF}
 		{5DF26186-B69F-496B-A765-DA8F99464EC6} = {BA8D2518-596A-4CAC-A82B-BCD58134E72F}
+		{7FC6ACE8-F856-4151-8EC2-0B4DDB35338D} = {DE484585-243D-4CC4-8502-BF92D3D701CF}
 		{5A9322F5-E8EE-4544-855B-6B7625933BFB} = {5DF26186-B69F-496B-A765-DA8F99464EC6}
 		{06F6399B-9D71-42F4-ADF0-7FAEFAABE708} = {5DF26186-B69F-496B-A765-DA8F99464EC6}
 		{37CEE47F-FC8F-41C5-8713-29AD1E3D3E7C} = {BA143B74-F074-48B6-B2C6-45B3CFFDA79A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81328AB1-F75D-4BDD-AB80-1CCDBBC1B756}
 	EndGlobalSection
 EndGlobal
