@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp2.1netcoreapp2.2</TargetFrameworks>
+    <TargetFrameworks>net461;netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>WebApi.ExceptionInterceptSample</AssemblyName>
     <OutputType>Exe</OutputType>    
