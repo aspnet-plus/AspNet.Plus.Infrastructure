@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFrameworks>net461;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>net461;netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
     <Description>A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).</Description>
     <Copyright>Copyright 2018, AspNet.Plus contributors</Copyright>
     <AssemblyTitle>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</AssemblyTitle>
