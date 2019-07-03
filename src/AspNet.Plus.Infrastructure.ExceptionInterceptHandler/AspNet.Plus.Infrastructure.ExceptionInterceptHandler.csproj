@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFrameworks>net461;netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
+    <TargetFrameworks>net461;netstandard2.0;</TargetFrameworks>
     <Description>A Global Exception Handler Middleware, allowing developers to create one or more exception handlers (intercepts).</Description>
     <Copyright>Copyright 2019, AspNet.Plus contributors</Copyright>
     <AssemblyTitle>AspNet.Plus.Infrastructure.ExceptionInterceptHandler</AssemblyTitle>
@@ -24,9 +24,9 @@
     <RepositoryUrl>git://github.com/aspnet-plus/aspnet.plus.infrastructure</RepositoryUrl>
     <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.2.3</Version>
-    <AssemblyVersion>2.2.3.0</AssemblyVersion>
-    <FileVersion>2.2.3.0</FileVersion>
+    <Version>2.2.4</Version>
+    <AssemblyVersion>2.2.4.0</AssemblyVersion>
+    <FileVersion>2.2.4.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
